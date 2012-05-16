@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AssemblyName>Nyi</AssemblyName>
+    <AssemblyName>FEZ_PandaII</AssemblyName>
     <OutputType>Library</OutputType>
-    <RootNamespace>de.ahzf.Vanaheimr.Nyi</RootNamespace>
+    <RootNamespace>de.ahzf.Vanaheimr.Nyi.FEZ_PandaII</RootNamespace>
     <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C9163B48-85A2-427F-8223-E8EC99D61A53}</ProjectGuid>
+    <ProjectGuid>{301B48DF-8E92-4091-8DE6-9D4F9E495604}</ProjectGuid>
     <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
     <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
   </PropertyGroup>
@@ -19,7 +19,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Nyi.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,39 +30,33 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Chips\ADE7533.cs" />
-    <Compile Include="ExtensionMethods\SerialPortExtensions.cs" />
-    <Compile Include="LEDs\LEDType.cs" />
-    <Compile Include="LEDs\LED.cs" />
+    <Compile Include="Hardware\AnalogInExtentions.cs" />
+    <Compile Include="Hardware\FEZ.cs" />
+    <Compile Include="Hardware\PWMLED.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\AntraxShield.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\GPS.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\GSM.cs" />
-    <Compile Include="Shields\MCIEnergyShield\EnergyMeter.cs" />
-    <Compile Include="Shields\MCIEnergyShield\EnergyShield.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FEZPanda_II_GHIElectronics.NETMF.FEZ, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.Hardware, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.System, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.W5100, Version=4.1.9.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.W5100.Dhcp, Version=4.1.8.1, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.W5100.Http, Version=4.1.9.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SPOT.Hardware" />
     <Reference Include="Microsoft.SPOT.Hardware.SerialPort" />
-    <Reference Include="Microsoft.SPOT.IO" />
-    <Reference Include="Microsoft.SPOT.Native">
-    </Reference>
-    <Reference Include="Microsoft.SPOT.Net" />
-    <Reference Include="Microsoft.SPOT.Net.Security" />
-    <Reference Include="Microsoft.SPOT.Time" />
-    <Reference Include="Microsoft.SPOT.TinyCore" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shields\AntraxGPRS_GSM_GPS\AntraxGPRS_GSM_GPS_Shield_PinLayout.png" />
+    <Folder Include="Shields\AntraxGPRS_GSM_GPS\" />
+    <Folder Include="Shields\MCIEnergyShield\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Illias\Commons.MF\Commons.MF.csproj">
       <Project>{F6ED06B7-CA8D-40CC-96F8-E3AFB80077B7}</Project>
       <Name>Commons.MF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Styx\Styx.MF\Styx.MF.csproj">
-      <Project>{F6ED06B7-DA8D-40CC-96F8-E3AFB80077B7}</Project>
-      <Name>Styx.MF</Name>
+    <ProjectReference Include="..\Nyi\Nyi.csproj">
+      <Project>{C9163B48-85A2-427F-8223-E8EC99D61A53}</Project>
+      <Name>Nyi</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
