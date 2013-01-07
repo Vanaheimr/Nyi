@@ -181,7 +181,7 @@ namespace de.ahzf.Vanaheimr.Nyi.AntraxMobileShield
             // Disable echo
             _SerialPort.WriteLineAndRead("ATE0");
             
-            // Set Serial ort baudrate
+            // Set Serial port baudrate
             _SerialPort.WriteLineAndRead("AT+IPR=" + Baud.ToString());
 
             // Set SIM Detection mode (SIM)
