@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace de.ahzf.Vanaheimr.Nyi
+namespace eu.Vanaheimr.Nyi
 {
 
     /// <summary>

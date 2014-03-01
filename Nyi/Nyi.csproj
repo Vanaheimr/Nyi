@@ -8,8 +8,9 @@
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C9163B48-85A2-427F-8223-E8EC99D61A53}</ProjectGuid>
-    <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,16 +32,18 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Chips\ADE7533.cs" />
     <Compile Include="ExtensionMethods\SerialPortExtensions.cs" />
     <Compile Include="LEDs\LEDType.cs" />
     <Compile Include="LEDs\LED.cs" />
+    <Compile Include="Networking\UDPClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\AntraxShield.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\GPS.cs" />
-    <Compile Include="Shields\AntraxGPRS_GSM_GPS\GSM.cs" />
-    <Compile Include="Shields\MCIEnergyShield\EnergyMeter.cs" />
-    <Compile Include="Shields\MCIEnergyShield\EnergyShield.cs" />
+    <Compile Include="Tools\Actions.cs" />
+    <Compile Include="Tools\Enumerator.cs" />
+    <Compile Include="Tools\ExtensionAttribute.cs" />
+    <Compile Include="Tools\Filter.cs" />
+    <Compile Include="Tools\Predicate.cs" />
+    <Compile Include="Tools\PullUpResistor.cs" />
+    <Compile Include="Tools\Stopwatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Hardware" />
@@ -52,18 +55,9 @@
     <Reference Include="Microsoft.SPOT.Net.Security" />
     <Reference Include="Microsoft.SPOT.Time" />
     <Reference Include="Microsoft.SPOT.TinyCore" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Shields\AntraxGPRS_GSM_GPS\AntraxGPRS_GSM_GPS_Shield_PinLayout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Illias\Commons.MF\Commons.MF.csproj">
-      <Project>{F6ED06B7-CA8D-40CC-96F8-E3AFB80077B7}</Project>
-      <Name>Commons.MF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Styx\Styx.MF\Styx.MF.csproj">
-      <Project>{F6ED06B7-DA8D-40CC-96F8-E3AFB80077B7}</Project>
-      <Name>Styx.MF</Name>
-    </ProjectReference>
+    <Reference Include="System" />
+    <Reference Include="System.Http" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.Net.Security" />
   </ItemGroup>
 </Project>

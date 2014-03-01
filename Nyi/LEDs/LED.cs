@@ -25,7 +25,7 @@ using Microsoft.SPOT.Hardware;
 
 #endregion
 
-namespace de.ahzf.Vanaheimr.Nyi
+namespace eu.Vanaheimr.Nyi
 {
 
     /// <summary>

@@ -25,7 +25,7 @@ using System.Threading;
 
 #endregion
 
-namespace de.ahzf.Vanaheimr.Nyi
+namespace eu.Vanaheimr.Nyi
 {
 
     public static class SerialPortExtensions
