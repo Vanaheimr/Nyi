@@ -32,6 +32,7 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
+    <Compile Include="ExtensionMethods\TimeSpan.cs" />
     <Compile Include="ExtensionMethods\SerialPortExtensions.cs" />
     <Compile Include="I2C\I2CPlug.cs" />
     <Compile Include="LEDs\LEDType.cs" />
