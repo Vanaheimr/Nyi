@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2011-2012, Belectric ITS GmbH <opensource@belectric.com>
- * Autor: Achim 'ahzf' Friedland <achim.friedland@belectric.com>
+ * Copyright (c) 2011-2014, Achim 'ahzf' Friedland <achim@graphdefined.org>
  * This file is part of Vanaheimr Nyi <http://www.github.com/Vanaheimr/Nyi>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
